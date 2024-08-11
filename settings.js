@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('viewDetails', viewDetails);
     });
 
-    // Event listeners for custom theme overlay
+    // Event listener for custom theme overlay
     document.getElementById('apply-theme').addEventListener('click', function() {
         const navbarColor = document.getElementById('navbar-color').value;
         const backgroundColor = document.getElementById('background-color').value;
@@ -85,6 +85,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const customBackgroundColor = localStorage.getItem('customBackgroundColor') || '#000000';
             const customTextColor = localStorage.getItem('customTextColor') || '#ffffff';
             const customBrightness = localStorage.getItem('customBrightness') || '100';
+
+            document.getElementById('navbar-color').value = customNavbarColor;
+            document.getElementById('background-color').value = customBackgroundColor;
+            document.getElementById('text-color').value = customTextColor;
+            document.getElementById('brightness').value = customBrightness;
 
             document.documentElement.style.setProperty('--navbar-background', customNavbarColor);
             document.documentElement.style.setProperty('--navbar-darker', shadeColor(customNavbarColor, -20));
